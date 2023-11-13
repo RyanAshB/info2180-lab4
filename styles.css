@@ -1,0 +1,21 @@
+body {
+    justify-content: center;
+}
+
+
+.title{
+    background-color: rgb(146, 58, 134);
+    color: rgb(233, 233, 233);
+    padding: 30px;
+    text-align: center;
+}
+
+
+.resultHeading {
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+}
+
+.noSups {
+    color: red;
+}
