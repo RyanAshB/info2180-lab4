@@ -1,18 +1,18 @@
-document.getElementById("searchButton").addEventListener("click", function() {
+document.addEventListener('DOMContentLoaded', function () {
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "superheroes.php", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var superheroes = JSON.parse(xhr.responseText);
+    document.getElementById('searchButton').addEventListener('click', function () {
 
-            var aliases = superheroes.map(function(superhero) {
-                return superhero.alias;
+        fetch('superheroes.php')
+            .then(response => response.json())
+            .then(data => {
 
-            }).join("\n");
-
-            alert(aliases);
-        }
-    };
-    xhr.send();
+                let alertMessage = '';
+                data.forEach(superhero => {
+                    alertMessage += `${superhero.alias}\n`;
+                });
+                alert(alertMessage);
+            })
+            .catch(error => console.error('Error in search', error));
+    });
 });
+
