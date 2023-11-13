@@ -1,5 +1,5 @@
 document.getElementById("searchButton").addEventListener("click", function() {
-    // Make an AJAX request
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "superheroes.php", true);
     xhr.onreadystatechange = function() {
@@ -8,7 +8,7 @@ document.getElementById("searchButton").addEventListener("click", function() {
 
             var aliases = superheroes.map(function(superhero) {
                 return superhero.alias;
-                
+
             }).join("\n");
 
             alert(aliases);
